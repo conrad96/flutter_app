@@ -1,46 +1,26 @@
 import 'package:flutter/material.dart';
+import './product_manager.dart';
 
-  //void main() => runApp(MyApp());
-  main()
+//void main() => runApp(MyApp());
+
+main()
   {
     runApp(MyApp());
   }
-  class MyApp extends StatefulWidget
+
+  class MyApp extends StatelessWidget
   {
     @override
-     State<StatefulWidget> createState(){
-        return _MyApp();
-    }
-  }
-
-  class _MyApp extends State<MyApp>{
-
-    List<String> _products=["Food Stuff"];
-
-     Widget  build(context)
+     Widget  build(BuildContext context)
     {
       return MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text("Conrad's App"),
-          ),//appBar
-          body: Column(
-            children: [
-              Container(
-              margin: EdgeInsets.all(10.0),
-              child: RaisedButton(
-              onPressed: () {
-                setState((){
-                  _products.add("Fruits");
-                });
-
-              },
-            child: Text("Add product")
-                ),
-              ),
-            ] )
-        ),//scaffold
-      );
+          home: Scaffold(
+            appBar: AppBar(
+              title: Text("My Store"),
+            ),//appBar
+            body: ProductManager(),
+            ),//scaffold
+        );
 
   }
 
