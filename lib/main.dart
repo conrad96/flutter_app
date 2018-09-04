@@ -1,9 +1,22 @@
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-  void main() => runApp(MyApp());
-
-  class MyApp extends StatelessWidget
+  //void main() => runApp(MyApp());
+  main()
   {
+    runApp(MyApp());
+  }
+  class MyApp extends StatefulWidget
+  {
+    @override
+     State<StatefulWidget> createState(){
+        return _MyApp();
+    }
+  }
+
+  class _MyApp extends State<MyApp>{
+
+    List<String> _products=["Food Stuff"];
+
      Widget  build(context)
     {
       return MaterialApp(
@@ -13,17 +26,23 @@
           ),//appBar
           body: Column(
             children: [
-              RaisedButton(
-              onPressed: () {},
-              child: Text("Click Here")
-              )
-            ,Card (child: Column(children: <Widget>[
-          Image.asset('assets/me.jpg'),
-          Text('Conrad Mugisha')
-          ]))] )
+              Container(
+              margin: EdgeInsets.all(10.0),
+              child: RaisedButton(
+              onPressed: () {
+                setState((){
+                  _products.add("Fruits");
+                });
+
+              },
+            child: Text("Add product")
+                ),
+              ),
+            ] )
         ),//scaffold
       );
 
   }
 
-}
+  }
+
