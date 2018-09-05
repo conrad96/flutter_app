@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import './product_manager.dart';
 
-//void main() => runApp(MyApp());
-
-main()
-  {
-    runApp(MyApp());
-  }
-
+  void main() => runApp(MyApp());
   class MyApp extends StatelessWidget
   {
     @override
@@ -18,11 +12,10 @@ main()
             appBar: AppBar(
               title: Text("My Store"),
             ),//appBar
-            body: ProductManager(),
+            body: ProductManager("First"),
             ),//scaffold
         );
 
     }
 
   }
-
