@@ -10,7 +10,7 @@ import './product_manager.dart';
       return MaterialApp(
           home: Scaffold(
             appBar: AppBar(
-              title: Text("My Store"),
+              title: Text("My Store App"),
             ),//appBar
             body: ProductManager("First"),
             ),//scaffold
