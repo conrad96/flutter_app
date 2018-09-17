@@ -17,8 +17,8 @@ class AppState extends State<App>{
   List<ImageModel> images=[];
   void  fetchImage() async {
     counter++;
-    final response = await get('http://jsonplaceholder.typicode.com/photos/$counter');
-    final imageModel= ImageModel.fromJson(json.decode(response.body));
+    var response = await get('http://jsonplaceholder.typicode.com/photos/$counter');
+    var imageModel= ImageModel.fromJson(json.decode(response.body));
   
     setState(() {
           images.add(imageModel);
@@ -27,15 +27,14 @@ class AppState extends State<App>{
   Widget build(context){
     return MaterialApp(
     home: Scaffold(
-     
+      body: ImageList(images),
       appBar: AppBar(
         title: Text("Scratch App"),
       ),
        floatingActionButton: FloatingActionButton(
          onPressed: fetchImage,
          child: Icon(Icons.add),
-       ),
-       body: ImageList(images),
+       )      
     )
   );
   }
